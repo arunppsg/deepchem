@@ -13,6 +13,9 @@ jobs:
       with:
         ref: master
 
+    - name: test origin command
+      run: git remote show origin
+
     - name: Cache pip packages for Linux
       if: runner.os == 'Linux'
       uses: actions/cache@v3
