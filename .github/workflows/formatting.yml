@@ -11,7 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        ref: master
+        # ref: master
+        fetch-depth: 0
 
     - name: test origin command
       run: git remote show origin
