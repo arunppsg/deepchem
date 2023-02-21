@@ -64,6 +64,17 @@ jobs:
 #      shell: bash -l {0}
 #      run: pip install -e .
 
+    - name: Pull request base sha
+      run: echo ${{ github.event.pull_request.base.sha }}
+
+    - name: Dump github context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+
+    - name: Show commit range
+      run: echo "commit range is $COMMIT_RANGE"
+
     - name: Show files modified
       run: git diff --name-only $COMMIT_RANGE
 
