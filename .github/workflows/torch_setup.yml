@@ -1,11 +1,11 @@
 name: Test for DeepChem Torch
-on:
-  push: # ci work when pushing master branch
-    branches:
-      - master
-  pull_request: # ci work when creating a PR to master branch
-    branches:
-      - master
+on: [push, pull_request]
+#  push: # ci work when pushing master branch
+#    branches:
+#      - master
+#  pull_request: # ci work when creating a PR to master branch
+#    branches:
+#      - master
 jobs:
   build:
     runs-on: ${{ matrix.os }}
